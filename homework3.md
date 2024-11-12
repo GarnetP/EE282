@@ -18,7 +18,8 @@ faSize -tab dmel-all-chromosome-r6.48.fasta.gz
 # Genome Summary Results 
 
 ## Checksum output
-788284dde5766ab5f5a807126d747347c22f761f## Total number of nucleotides
+788284dde5766ab5f5a807126d747347c22f761f
+## Total number of nucleotides
 143726002
 ## Total number of Ns
 1152978
@@ -87,7 +88,7 @@ bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 
    115 rRNA  
 
-    32 snRNA  
+   32 snRNA  
 
 ## Total number of genes per chromosome arm
    4227 3R  
