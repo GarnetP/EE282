@@ -8,8 +8,6 @@ cd ~/myrepos/ee282/data/
 shasum dmel-all-chromosome-r6.48.fasta.gz
 ```
 
-## Checksum output
-788284dde5766ab5f5a807126d747347c22f761f 
 ## Process the fasta file 
 
 ```
@@ -18,7 +16,9 @@ faSize -tab dmel-all-chromosome-r6.48.fasta.gz
 ```
 
 # Genome Summary Results 
-## Total number of nucleotides
+
+## Checksum output
+788284dde5766ab5f5a807126d747347c22f761f## Total number of nucleotides
 143726002
 ## Total number of Ns
 1152978
@@ -26,10 +26,16 @@ faSize -tab dmel-all-chromosome-r6.48.fasta.gz
 1870
 
 # Annotation Summary Code (also in code/scripts/hw3_annotation_summary.sh)
-## Total number of features of each type, sorted from most common to least common
+## Verify file integrity
 
 ```
 cd ~/myrepos/ee282/data/
+shasum dmel-all-r6.48.gtf.gz
+```
+
+## Total number of features of each type, sorted from most common to least common
+
+```
 bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 | sort /
 | uniq -c /
@@ -47,6 +53,9 @@ bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 ```
 
 # Annotation Summary Results
+## Checksum output  
+ 24529357ed063441c1137dddabf3db2ee9050f09  
+ 
 ## Total number of features of each type, sorted from most common to least common
  190050 exon  
 
@@ -66,19 +75,19 @@ bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 
    3053 ncRNA  
 
-    485 miRNA  
+   485 miRNA  
 
-    365 pseudogene  
+   365 pseudogene  
 
-    312 tRNA  
+   312 tRNA  
 
-    300 snoRNA  
+   300 snoRNA  
 
-    262 pre_miRNA  
+   262 pre_miRNA 
 
-    115 rRNA  
+   115 rRNA  
 
-     32 snRNA  
+    32 snRNA  
 
 ## Total number of genes per chromosome arm
    4227 3R  
@@ -91,6 +100,6 @@ bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 
    2708 X  
 
-    114 4  
+   114 4  
 
-    113 Y
+   113 Y
