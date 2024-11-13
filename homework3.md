@@ -5,20 +5,24 @@
 
 ```
 cd ~/myrepos/ee282/data/
-shasum dmel-all-chromosome-r6.48.fasta.gz
+md5sum dmel-all-chromosome-r6.48.fasta.gz > dmel-all-chromosome-r6.48.fasta.gz.md5
+
+md5sum -c dmel-all-chromosome-r6.48.fasta.gz.md5
+md5sum dmel-all-chromosome-r6.48.fasta.gz
 ```
 
 ## Process the fasta file 
 
 ```
 module load ucsc-tools/v429
-faSize -tab dmel-all-chromosome-r6.48.fasta.gz 
+faSize -tab dmel-all-chromosome-r6.48.fasta.gz | grep -e "baseCount" -e "nBaseCount" -e "seqCount"
 ```
 
 # Genome Summary Results 
 
 ## Checksum output
-788284dde5766ab5f5a807126d747347c22f761f
+be1f79c5922a4bf08548a2a4553e4d5f
+
 ## Total number of nucleotides
 143726002
 ## Total number of Ns
@@ -31,7 +35,9 @@ faSize -tab dmel-all-chromosome-r6.48.fasta.gz
 
 ```
 cd ~/myrepos/ee282/data/
-shasum dmel-all-r6.48.gtf.gz
+md5sum dmel-all-r6.48.gtf.gz > dmel-all-r6.48.gtf.gz.md5
+md5sum -c dmel-all-r6.48.gtf.gz.md5
+md5sum dmel-all-r6.48.gtf.gz
 ```
 
 ## Total number of features of each type, sorted from most common to least common
@@ -55,7 +61,7 @@ bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 
 # Annotation Summary Results
 ## Checksum output  
- 24529357ed063441c1137dddabf3db2ee9050f09  
+e13fa4e210bb47378ac2797cf78d69b
  
 ## Total number of features of each type, sorted from most common to least common
  190050 exon  

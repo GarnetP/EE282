@@ -1,7 +1,10 @@
 # Script for annotation summary
 # Verify file integrity
 cd ~/myrepos/ee282/data/
-shasum dmel-all-r6.48.gtf.gz
+md5sum dmel-all-r6.48.gtf.gz > dmel-all-r6.48.gtf.gz.md5
+md5sum -c dmel-all-r6.48.gtf.gz.md5
+md5sum dmel-all-r6.48.gtf.gz
+
 # Total number of features of each type, sorted from most common to least common
 bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 | sort /
