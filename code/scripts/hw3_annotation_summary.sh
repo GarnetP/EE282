@@ -2,9 +2,9 @@
 # Verify file integrity
 echo "File integrity check:"
 cd ~/myrepos/ee282/data/
-md5sum dmel-all-r6.48.gtf.gz > dmel-all-r6.48.gtf.gz.md5
-md5sum -c dmel-all-r6.48.gtf.gz.md5
-md5sum dmel-all-r6.48.gtf.gz
+wget http://ftp.flybase.net/releases/FB2022_05/dmel_r6.48/gtf/md5sum.txt -O md5sumanno.txt
+md5sum -c --ignore-missing md5sumanno.txt
+
 
 # Total number of features of each type, sorted from most common to least common
 echo "Number of features of each type:"

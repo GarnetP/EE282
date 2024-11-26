@@ -4,12 +4,12 @@
 ## Verify file integrity with a checksum 
 
 ```
-cd ~/myrepos/ee282/data/
-md5sum dmel-all-chromosome-r6.48.fasta.gz > dmel-all-chromosome-r6.48.fasta.gz.md5
-
-md5sum -c dmel-all-chromosome-r6.48.fasta.gz.md5
-md5sum dmel-all-chromosome-r6.48.fasta.gz
+cd ~/myrepos/ee282/data
+wget http://ftp.flybase.net/releases/FB2022_05/dmel_r6.48/fasta/md5sum.txt
+md5sum -c --ignore-missing md5sum.txt
 ```
+## Checksum output
+OK
 
 ## Process the fasta file 
 
@@ -19,9 +19,6 @@ faSize -tab dmel-all-chromosome-r6.48.fasta.gz | grep -e "baseCount" -e "nBaseCo
 ```
 
 # Genome Summary Results 
-
-## Checksum output
-be1f79c5922a4bf08548a2a4553e4d5f
 
 ## Total number of nucleotides
 143726002
@@ -35,10 +32,11 @@ be1f79c5922a4bf08548a2a4553e4d5f
 
 ```
 cd ~/myrepos/ee282/data/
-md5sum dmel-all-r6.48.gtf.gz > dmel-all-r6.48.gtf.gz.md5
-md5sum -c dmel-all-r6.48.gtf.gz.md5
-md5sum dmel-all-r6.48.gtf.gz
+wget http://ftp.flybase.net/releases/FB2022_05/dmel_r6.48/gtf/md5sum.txt -O md5sumanno.txt
+md5sum -c --ignore-missing md5sumanno.txt
 ```
+## Checksum output  
+OK
 
 ## Total number of features of each type, sorted from most common to least common
 
@@ -60,8 +58,6 @@ bioawk -c gff '{print $3}' dmel-all-r6.48.gtf.gz /
 ```
 
 # Annotation Summary Results
-## Checksum output  
-e13fa4e210bb47378ac2797cf78d69b
  
 ## Total number of features of each type, sorted from most common to least common
  190050 exon  
